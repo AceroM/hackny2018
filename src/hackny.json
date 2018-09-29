@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hackny-217921",
+  "private_key_id": "292aad86a4adc4bb11cb14432c88086b6b3887a7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4Fojhlq6i97Bm\nk5cRsiWKG+fPXSGgvUmy/PbQZZ9Vka2NiPsM6sc++ZIqBwpbuzAJ+YZfkInYL+Cx\nvLv8yAnbaQZJ8atwRwWfooPpKb9W6zzPvavvSxgy/MNvSgKs2MZblBCDtynNMNOw\nEy7qeNwkAo04gGpR+o8KxO/KOCj0ItuNuZh+Cxqxzh2ouIfaYsP9g8JWh/+eXJkQ\nywnOIkVAG68odif7hWnttdPDxLQRGGNwtkOXv14UIcDm9Nflwsy/m/bfACGWrH7p\nzcFCGKNOCWcpdxCjOSrYLC/Hj2uSMvUuw1WlbCafKZS21PZqGkxLkkxcl1T+qMjm\nlZhin+xnAgMBAAECggEAJBlLK02knlGK9np/t9ki0mPpf7joFMC5uI8xiSk8ZwfD\nrEsNy/koLDm9h19NETLyVypmxsuttEajPcdgZ9AEWtHMCWkKMODEggrY6jqlClLj\n4Gr10d18d9coLeUqBCIYN7If0Ox0loe6Iz+HxjQAG1Gixs8ryjqjnT2ENjfwE/uC\npL73SORStLVVKDA4gHVEt2JYC6ZTUm5DFty9PIrYGgfX5zAazXteqAWyl7KMMoBa\nyaUXNpZQTBxLgHH2TP2FGXDrgLYzEkX8jhaIQSXwChY/oZLex7PnCzVXLqKef3Ln\nganN6CH8SDXCuyp/0Lds5RzlrJ85lYccz4jSuAVOlQKBgQDlSgsfAAgDrEOFr4Eg\npVYRgtTFja1DmuRQarNGWszwsME6u1ryRLpH6yE2Hwx3EmtEMUXZ3/Ea+0G9MgWK\n5yub421yWVlZdgt9xMo+aMomoQ8XFevEvNlJZxuvh77IBOCRRZudrcUFr8hj4KPg\nmYR9n9Fii7M2vtl3lh3PMDuagwKBgQDNiHuHaLm+OnASswVzSPlZ/gEEz/p1FXSw\nFxJab/moAblp/14e7Is1EMlKo7X/1wPJn1DXwv18Anu5yhSV+MmbMWsa4myXGGQS\ns9POZCyMwCKL60vI8gEMGQp6NsuWJ5K7d5X7y7Y4OjpHTDtxpBlve65fSHEtLyIM\nSgLfCsVRTQKBgEIAY10kFCqCftlPoNr13OWjhH3tf2+TeZ9QZ5Sb9JxgNO8kGVTd\nxcWIAIJkw6DO84Oor1O9K9k5dD3y1Tebvajc+ZdN8vNWkI4+hH0civw9pmtdywVR\n2zZO8OBBMgC/rqkCoX3tFGbDp+pgMqwnZMUIqSw1zHu4yj6rPp9yYeXjAoGAJEXH\n9zfGQAo0KTiq55OjXfxz1ZOW0f79Xu5TcN5+IuZbAJfu1mpMjwrtW1zVC9e4dWbG\nb62b6rzNdRZy15zWh6sLCe2X2HqXfq153dzT9+sYrbTS5R3AjZAFx1fQSimlvav3\nLj7fY8Dy9A5CF2Ysjv424d35C05cJesR4qcV96kCgYEAyS1QarcGflzoFuTYVRaO\n+4l/gZIOg19K05TVX9lp+i6uTB0hfzLif1IEzwZk6c/XUwXXE1VMVvzH32n1ieYP\nW7/bqlOhHhShghdklXZKY/7a9RBfh4UJpOzFlojy2wON4+tO0EZjhwwd9MGJ6OFm\nKMMX5lefA2Jg7Ce9eW6pFQo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "vision@hackny-217921.iam.gserviceaccount.com",
+  "client_id": "101283191369788942971",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vision%40hackny-217921.iam.gserviceaccount.com"
+}
