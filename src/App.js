@@ -68,23 +68,41 @@ class App extends Component {
     this.state.isDragged = true;
   }
 
+  copy = () =>{
+    const copyText = document.getElementById("txt");
+    const textArea = document.createElement("textarea");
+    textArea.value = copyText.textContent;
+    document.body.appendChild(textArea);
+    textArea.select(); // set variable then put it in docs textarea.select  const file = textArea
+    //console.log(textArea)
+    document.execCommand("Copy");
+    textArea.remove();
+  }
+
   render() {
     const listItems = this.state.text.map((sentence) => {
-      <li> {sentence} </li>
+      <p> {sentence} </p>
     })
     return (
       <div className="App">
         <header>Picture Notes</header>
-        <div>
-        <input type='file' onChange={(e) => this._fileHandle(e)}/>
-        </div>
-        <div className="adjust-image">
-          <img className="real-img" src={this.state.img}/>
-        </div>
-        <div className= "adjust-txt">
+        <div className ="adjust-button">
+          <input type='file' onChange={(e) => this._fileHandle(e)}/>
+          <br/>
+          </div>
         <br/>
-        <ul id="txt"> {this.state.text.map((line) => <li> {line}</li>)} </ul>
-        </div>
+          <div className="adjust-image">
+            <img className="real-img" src={this.state.img}/>
+          </div>
+        {this.state.isDragged ?(
+          <div className= "adjust-txt">
+            <br/>
+            <button onClick={() => this.copy()}>Copy to Clipboard</button>
+            <p id="txt"> {this.state.text.map((line) => <p> {line}</p>)} </p>
+            <input type ='text' id ='result' value ={this.state.text.map((line) => <p> {line}</p>)}></input>
+          </div>          
+          ):<div></div>
+        }
       </div>
     );
   }
