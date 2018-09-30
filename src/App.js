@@ -102,16 +102,16 @@ const temp2 = temp1.reduce((sum, val, i, arr) => {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title"> Picture Notes </h1> 
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <input type="file" onChange={(e) => this._fileHandle(e)}/>
-        <img src={this.state.img}/>
+        <header>Picture Notes</header>
+        <div>
+        <input type='file' onChange={(e) => this._fileHandle(e)}/>
+        </div>
+        <div className="adjust-image">
+          <img className="real-img" src={this.state.img}/>
+        </div>
+        <div className= "adjust-txt">
         <h1 id="txt"> {this.state.text} </h1>
+        </div>
       </div>
     );
   }
