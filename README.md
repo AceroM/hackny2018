@@ -4,7 +4,7 @@ Names
 * Miguel Acero
 * Yi Tong Ni
 * Steven Li
-* Xiaomin Mo
+* Xiangmin Mo
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
