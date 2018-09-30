@@ -13,16 +13,33 @@ class App extends Component {
   }
   
 /*
-temp1.reduce((sum, val, i, arr) => {
-	const group = []
+const temp2 = temp1.reduce((sum, val, i, arr) => {
 	if (i != 0) {
-        const bound = val.boundingPoly.vertices
-        const str = "";
-        const yThresh = Math.abs(bound[0].y-bound[2].y)/2
-        const box = [bound[0].y-yThresh, bound[2].y+yThresh];
-		group = arr.filter	
+    if (sum.length > 1) {
+      const exists = sum.some(item => {
+        item.some(m => m == val);
+      })
+      if (exists) {
+        return sum
+      }
     }
-}, {})
+    const bound = val.boundingPoly.vertices
+    const str = "";
+    const yThresh = Math.abs(bound[0].y-bound[2].y)/2
+    const box = [bound[0].y-yThresh, bound[2].y+yThresh];
+		const group = arr.filter(m => {
+      const iBound = m.boundingPoly.vertices;
+      return iBound[0].y > box[0] && iBound[2].y < box[1]
+    })
+    sum.push(group.reduce((sum, val, i) => {
+      if (i != 0) {
+        
+      }
+    }));
+    return sum;
+  }
+  return sum;
+}, [])
 */
   handleImage(reader) {
     const b64 = reader.split(',', 2)[1];
