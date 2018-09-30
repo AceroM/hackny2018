@@ -11,7 +11,19 @@ class App extends Component {
 
   componentDidMount(){
   }
-
+  
+/*
+temp1.reduce((sum, val, i, arr) => {
+	const group = []
+	if (i != 0) {
+        const bound = val.boundingPoly.vertices
+        const str = "";
+        const yThresh = Math.abs(bound[0].y-bound[2].y)/2
+        const box = [bound[0].y-yThresh, bound[2].y+yThresh];
+		group = arr.filter	
+    }
+}, {})
+*/
   handleImage(reader) {
     const b64 = reader.split(',', 2)[1];
     console.log(b64)
@@ -29,10 +41,13 @@ class App extends Component {
             },
             "features":[
               {
-                "type":"TEXT_DETECTION",
-                "maxResults":2
-              }
-            ]
+                "type": "DOCUMENT_TEXT_DETECTION",
+                "maxResults":10 
+              } 
+            ],
+            "imageContext": {
+              "languageHints": ["en"]
+            }
           }
         ]
       })
@@ -43,6 +58,8 @@ class App extends Component {
     })
     .then(data => {
       console.log(data)
+
+      console.log(data.responses["0"].textAnnotations)
       if (data.responses.length) {
         this.setState({
           text: data.responses["0"].fullTextAnnotation.text
@@ -50,6 +67,7 @@ class App extends Component {
       }
     })
   }
+  
   _fileHandle(e) {
     e.preventDefault();
     let reader = new FileReader();
