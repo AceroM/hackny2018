@@ -1,50 +1,23 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import parseData from './helperFunctions';
 import './App.css';
+var config = require('./config.json');
 
 class App extends Component {
   state = {
     isDragged: false,
     img : "",
-    text: ""
+    text: []
   }
 
   componentDidMount(){
   }
   
-/*
-const temp2 = temp1.reduce((sum, val, i, arr) => {
-	if (i != 0) {
-    if (sum.length > 1) {
-      const exists = sum.some(item => {
-        item.some(m => m == val);
-      })
-      if (exists) {
-        return sum
-      }
-    }
-    const bound = val.boundingPoly.vertices
-    const str = "";
-    const yThresh = Math.abs(bound[0].y-bound[2].y)/2
-    const box = [bound[0].y-yThresh, bound[2].y+yThresh];
-		const group = arr.filter(m => {
-      const iBound = m.boundingPoly.vertices;
-      return iBound[0].y > box[0] && iBound[2].y < box[1]
-    })
-    sum.push(group.reduce((sum, val, i) => {
-      if (i != 0) {
-        
-      }
-    }));
-    return sum;
-  }
-  return sum;
-}, [])
-*/
   handleImage(reader) {
     const b64 = reader.split(',', 2)[1];
     console.log(b64)
-    fetch('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyDyHZ3-o29xV9mjOmXwUFLvkyar4RsoSvU', {
+    fetch(`https://vision.googleapis.com/v1/images:annotate?key=${config.visionApiKey}`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -69,17 +42,13 @@ const temp2 = temp1.reduce((sum, val, i, arr) => {
         ]
       })
     })
-    .then(res => {
-      console.dir(res);
-      return res.json();
-    })
+    .then(res => res.json())
     .then(data => {
-      console.log(data)
-
-      console.log(data.responses["0"].textAnnotations)
+      // console.log(data)
+      const parsed = parseData(data.responses["0"].textAnnotations);;
       if (data.responses.length) {
         this.setState({
-          text: data.responses["0"].fullTextAnnotation.text
+          text: parsed
         })
       }
     })
@@ -100,6 +69,9 @@ const temp2 = temp1.reduce((sum, val, i, arr) => {
   }
 
   render() {
+    const listItems = this.state.text.map((sentence) => {
+      <li> {sentence} </li>
+    })
     return (
       <div className="App">
         <header>Picture Notes</header>
@@ -110,7 +82,8 @@ const temp2 = temp1.reduce((sum, val, i, arr) => {
           <img className="real-img" src={this.state.img}/>
         </div>
         <div className= "adjust-txt">
-        <h1 id="txt"> {this.state.text} </h1>
+        <br/>
+        <ul id="txt"> {this.state.text.map((line) => <li> {line}</li>)} </ul>
         </div>
       </div>
     );
